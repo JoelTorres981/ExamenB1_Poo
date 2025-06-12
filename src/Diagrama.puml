@@ -1,0 +1,72 @@
+@startuml
+package "Paquete Evaluacion" {
+class Evaluacion {
+- resultado : double
++ getResultado() : double
++ validacion() : double
+}
+}
+
+package "Paquete Personal" {
+abstract class Persona {
+- nombre : String
+- edad : int
+- cedula : String
++ mostrarDatos() : void (abstracto)
+}
+
+class Estudiante extends Persona {
+- tieneCertificado : String
++ validarEdad() : boolean
++ mostrarDatos() : void
+}
+
+class Docente extends Persona {
+- experiencia : int
+- especializacion : String
++ mostrarDatos() : void
+}
+}
+
+package "Paquete Cursos"{
+class Curso {
+- duracion : int
+- nombre : String
+- precioBase : double
+- docente : Docente
++ mostrarResumen() : void
++ asignarDocente(docente: Docente) : void
+}
+
+class CursoRegular extends Curso {
+}
+
+class CursoCertificado extends CursoRegular {
+- precioAdicional : double
++ precioFinal() : double
++ mostrarResumen() : void
+}
+}
+
+package "Paquete Matricula"{
+class Matricula {
+- curso : Curso
+- estudiante : Estudiante
+- docente : Docente
+- evaluacion : Evaluacion
+- horario : String
++ registrarEvaluacion() : boolean
++ mostrarDetalle() : void
++ validarNota() : boolean
+}
+}
+
+Curso <--> Docente
+Matricula <--> Curso
+Matricula <--> Estudiante
+Matricula <--> Docente
+Matricula <--> Evaluacion
+
+
+
+@enduml
