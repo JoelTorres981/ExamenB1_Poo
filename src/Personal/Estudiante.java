@@ -1,6 +1,6 @@
 package Personal;
 
-public class Estudiante extends Persona{
+public class Estudiante extends Persona {
     private String tieneCertificado;
 
     public Estudiante(String nombre, String cedula, int edad, String tieneCertificado) {
@@ -16,19 +16,15 @@ public class Estudiante extends Persona{
         this.tieneCertificado = tieneCertificado;
     }
 
-    public boolean validarEdad(){
-        return getEdad()>13 && getEdad()<60;
+    public boolean validarEdad() {
+        return getEdad() >= 13 && getEdad() <= 60;
     }
-
 
     @Override
-    void mostrarDatos() {
-        System.out.println("Nombre: "+ getNombre());
-        System.out.println("Cedula: "+ getCedula());
-        System.out.println("Edad: "+ getEdad());
-        System.out.println("Tiene cerficado: "+ getTieneCertificado());
+    public void mostrarDatos() {
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("Cédula: " + getCedula());
+        System.out.println("Edad: " + getEdad());
+        System.out.println("¿Tiene certificado?: " + tieneCertificado);
     }
-
-
-
 }

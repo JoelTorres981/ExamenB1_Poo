@@ -1,11 +1,12 @@
 package Cursos;
-import Personal.*;
+
+import Personal.Docente;
 
 public class Curso {
     private int duracion;
     private String nombre;
     private double precioBase;
-    Docente docente;
+    private Docente docente;
 
     public Curso(int duracion, String nombre, double precioBase, Docente docente) {
         this.duracion = duracion;
@@ -38,14 +39,26 @@ public class Curso {
         this.precioBase = precioBase;
     }
 
-    public void mostrarResumen(){
-        System.out.println("Nombre del curso: " + nombre);
-        System.out.println("Duracion (semanas)" + duracion);
-        System.out.println("Precio: " + precioBase);
-        System.out.println("Docente" + docente.getNombre());
+    public Docente getDocente() {
+        return docente;
     }
 
-    public void asignarDocente(Docente docente){
+    public void setDocente(Docente docente) {
+        this.docente = docente;
+    }
 
+    public void mostrarResumen() {
+        System.out.println("Nombre del curso: " + nombre);
+        System.out.println("Duración (semanas): " + duracion);
+        System.out.println("Precio: " + precioBase);
+        if (docente != null) {
+            System.out.println("Docente: " + docente.getNombre());
+        } else {
+            System.out.println("Docente: No asignado");
+        }
+    }
+
+    public void asignarDocente(Docente docente) {
+        this.docente = docente;
     }
 }

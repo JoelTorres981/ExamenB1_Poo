@@ -1,6 +1,6 @@
 package Personal;
 
-abstract class Persona {
+public abstract class Persona {
     private String nombre, cedula;
     private int edad;
 
@@ -34,6 +34,5 @@ abstract class Persona {
         this.edad = edad;
     }
 
-    abstract void mostrarDatos();
+    public abstract void mostrarDatos();
 }
-

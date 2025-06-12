@@ -11,15 +11,7 @@ public class Evaluacion {
         return resultado;
     }
 
-    // Validacion del resultado
-    public double validacion(){
-        if (resultado > 0 && resultado <= 10){
-            return resultado;
-        } else {
-            System.out.println("Fuera del rango");
-            return 0;
-        }
+    public boolean validarNota() {
+        return resultado >= 0 && resultado <= 10;
     }
-
-
 }

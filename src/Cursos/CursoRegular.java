@@ -1,7 +1,8 @@
 package Cursos;
-import Personal.*;
 
-public class CursoRegular extends Curso{
+import Personal.Docente;
+
+public class CursoRegular extends Curso {
     public CursoRegular(int duracion, String nombre, double precioBase, Docente docente) {
         super(duracion, nombre, precioBase, docente);
     }
