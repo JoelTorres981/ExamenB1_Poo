@@ -13,7 +13,6 @@ public class Main {
 
     public static void main(String[] args) {
         inicializarDatos();
-
         int opcion;
         do {
             System.out.println("\n===== MENÚ PRINCIPAL =====");
